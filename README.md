@@ -53,7 +53,7 @@ This project integrates reinforcement learning (RL) into personalized product re
    Check the `results/` directory for performance metrics and insights on the recommendation quality.
 
 ## CODE EXECUTION
-The provided code defines a Python function `MCModelv1` that implements a Monte Carlo model for decision making with epsilon-greedy exploration. Here's a breakdown of the code:
+The Code implements a Monte Carlo model for decision making with epsilon-greedy exploration.
 
 **Imports:**
 
