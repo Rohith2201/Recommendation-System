@@ -1,6 +1,3 @@
-# Recommendation-System
-Exploring the Integration of Reinforcement Learning  Techniques into Personalized Product Recommendation  Systems. 
-
 # Reinforcement Learning for Personalized Product Recommendation
 
 ## Project Overview
@@ -54,6 +51,83 @@ This project integrates reinforcement learning (RL) into personalized product re
 
 3. **Analyze Results**:
    Check the `results/` directory for performance metrics and insights on the recommendation quality.
+
+## CODE EXECUTION
+The provided code defines a Python function `MCModelv1` that implements a Monte Carlo model for decision making with epsilon-greedy exploration. Here's a breakdown of the code:
+
+**Imports:**
+
+- `pandas` for data manipulation
+- `numpy` for numerical computations
+- `matplotlib.pyplot` for plotting
+- `warnings` to suppress warnings
+
+**Function Definition:**
+
+```python
+def MCModelv1(data, alpha, e, epsilon, budget, reward):
+  # ... function body ...
+```
+
+**Function Arguments:**
+
+- `data`: Pandas DataFrame containing product information
+- `alpha`: Learning rate for updating V values
+- `e`: Number of episodes (simulations)
+- `epsilon`: Exploration rate for epsilon-greedy selection
+- `budget`: Budget constraint for selecting products
+- `reward`: List of rewards for each product (currently not used)
+
+**Function Body:**
+
+1. **Define States:**
+    - Identify unique ingredients (products) from the data.
+
+2. **Initialize V_0:**
+    - Set the initial value (V_0) for each product in the data. V_0 represents the expected value of an action (product).
+
+3. **Iterate Over Episodes:**
+    - Loop for the specified number of episodes (e).
+
+4. **Episode Run:**
+    - For each episode:
+        - Implement epsilon-greedy selection:
+            - If it's the first episode (random selection): Choose a random product for each ingredient.
+            - Otherwise:
+                - With probability `epsilon`, randomly choose a product for each ingredient.
+                - With probability (1 - epsilon), choose the product with the highest V value for each ingredient.
+    
+5. **Calculate Terminal Reward:**
+    - Check if the selected products fit within the budget.
+        - If yes, set the terminal reward to 1.
+        - If no, set the terminal reward to -1.
+
+6. **Update V Values:**
+    - Update the V value for each product based on the selected product, the terminal reward, and the learning rate (`alpha`).
+
+7. **Output:**
+    - Return various outputs including:
+        - Sum of V for all actions at each episode
+        - Sum of V for the cheapest and expensive actions
+        - Optimal actions selected based on V values
+        - Actions chosen in each episode
+
+**Model Execution:**
+
+- Set hyperparameters (alpha, epsilon, budget, etc.).
+- Call the `MCModelv1` function with the data and hyperparameters.
+- The function returns various outputs for analysis.
+
+**Plotting and Analysis:**
+
+- The code uses `matplotlib` to plot various aspects of the model's behavior, such as the sum of V values over episodes and the optimal actions chosen.
+
+**Interactive Visualization (Commented Out):**
+
+- The code includes commented-out sections for creating interactive visualizations using `plotly`.
+- These sections demonstrate how to create animations to explore the impact of different hyperparameters on model performance.
+
+Overall, this code implements a Monte Carlo model for decision making with epsilon-greedy exploration. You can adjust the hyperparameters and analyze the outputs to understand how the model behaves and choose the best actions in your specific scenario.
 
 ## Future Work
 
