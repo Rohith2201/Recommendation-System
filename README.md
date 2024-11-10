@@ -9,6 +9,12 @@ This project integrates reinforcement learning (RL) into personalized product re
 - **Budget Constraints**: Recommendations are optimized based on user-defined budget limits, ensuring product suggestions are both personalized and financially feasible.
 - **Reward Signals**: The model's performance is analyzed under various reward signal schemes to understand how reward parameters affect convergence and recommendation quality.
 
+## 👨‍💻 The Stack
+<div align="center">
+<img src= "https://tech-orbit.wontory.dev/api?title=Recommendation%20System&tech=Python,Git,Jupyter,pandas,NumPy,Plotly&size=1150&duration=30" width="500">
+</div>
+
+
 ## Techniques Used
 
 ### Monte Carlo Methods:
